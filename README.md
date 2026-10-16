@@ -40,7 +40,7 @@ chrome://extensions/
 1. 点击左上角的 **「加载已解压的扩展程序」** (Load unpacked) 按钮。
 2. 在弹出的文件选择器中，选择本扩展所在文件夹：
    ```text
-   D:\antigravity\douyin-downloader-extension
+   \douyin-downloader-extension
    ```
 3. 点击「选择文件夹」，插件即刻安装完毕并生效！
 
