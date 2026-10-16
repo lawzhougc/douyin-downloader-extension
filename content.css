@@ -1,0 +1,244 @@
+/* Content CSS for Douyin Video Downloader Extension (v1.3.0) */
+
+/* Floating Widget Container */
+.dy-dl-widget {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(22, 24, 35, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 26px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  user-select: none;
+  opacity: 0.92;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dy-dl-widget:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65);
+  border-color: rgba(36, 246, 240, 0.5);
+}
+
+/* Quality Selector Dropdown */
+.dy-dl-quality-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.dy-dl-quality-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: linear-gradient(135deg, rgba(36, 246, 240, 0.2) 0%, rgba(16, 163, 160, 0.3) 100%);
+  border: 1px solid rgba(36, 246, 240, 0.4);
+  color: #24f6f0;
+  font-weight: 700;
+  font-size: 11px;
+  border-radius: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  line-height: 1.3;
+}
+
+.dy-dl-quality-btn:hover {
+  background: linear-gradient(135deg, rgba(36, 246, 240, 0.35) 0%, rgba(16, 163, 160, 0.45) 100%);
+  border-color: #24f6f0;
+  transform: scale(1.02);
+}
+
+.dy-dl-arrow-icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.dy-dl-quality-dropdown.active .dy-dl-arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Quality Dropdown Menu */
+.dy-dl-quality-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 150px;
+  background: rgba(26, 28, 42, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1000000;
+  animation: dyMenuFadeIn 0.2s ease forwards;
+}
+
+@keyframes dyMenuFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dy-dl-quality-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #e0e2ec;
+  transition: all 0.15s ease;
+}
+
+.dy-dl-quality-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.dy-dl-quality-item.selected {
+  background: rgba(36, 246, 240, 0.15);
+  color: #24f6f0;
+  font-weight: 700;
+}
+
+.dy-dl-item-tag {
+  font-size: 10px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #b0b4c6;
+}
+
+.dy-dl-quality-item.selected .dy-dl-item-tag {
+  background: rgba(36, 246, 240, 0.25);
+  color: #24f6f0;
+}
+
+/* Action Buttons */
+.dy-dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.dy-dl-btn-primary {
+  background: linear-gradient(135deg, #fe2c55 0%, #ff0050 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(254, 44, 85, 0.35);
+}
+
+.dy-dl-btn-primary:hover {
+  background: linear-gradient(135deg, #ff4369 0%, #fe2c55 100%);
+  box-shadow: 0 4px 14px rgba(254, 44, 85, 0.6);
+  transform: scale(1.03);
+}
+
+.dy-dl-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.dy-dl-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ececec;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dy-dl-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.03);
+}
+
+.dy-dl-btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.dy-dl-icon {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Toast System */
+.dy-toast-container {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.dy-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: rgba(22, 24, 35, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  animation: dyFadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto;
+}
+
+.dy-toast-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.dy-toast-success .dy-toast-icon {
+  color: #24f6f0;
+}
+
+.dy-toast-info .dy-toast-icon {
+  color: #fe2c55;
+}
+
+@keyframes dyFadeInDown {
+  from { opacity: 0; transform: translateY(-16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes dyFadeOutUp {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-16px) scale(0.95); }
+}

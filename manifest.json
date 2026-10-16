@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "抖音无水印视频下载器 (Douyin Video Downloader)",
+  "version": "1.4.6",
+  "description": "一键解析并下载抖音网页版无水印超清视频，100%纯内存流式无损下载，彻底免疫403与IDM拦截，支持真实清晰度档位、浮动胶囊、弹窗及快捷键。",
+  "permissions": [
+    "downloads",
+    "storage",
+    "webRequest",
+    "activeTab",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.douyin.com/*",
+    "*://*.douyinvod.com/*",
+    "*://*.snssdk.com/*",
+    "*://*.amemv.com/*",
+    "*://*.douyinpic.com/*",
+    "*://*.byteimg.com/*",
+    "*://*.ibytedtos.com/*",
+    "*://*.pstatp.com/*",
+    "*://*.zijieapi.com/*",
+    "*://*.bytedance.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.douyin.com/*"],
+      "js": ["injected.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.douyin.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "抖音无水印下载器",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://*.douyin.com/*"]
+    }
+  ]
+}

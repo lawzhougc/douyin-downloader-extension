@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>抖音视频下载器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="logo-box">
+      <img src="icons/icon48.png" alt="Logo" class="logo-img">
+      <div class="title-group">
+        <h1 class="app-title">抖音无水印下载器</h1>
+        <span class="app-version">v1.3.2</span>
+      </div>
+    </div>
+    <div class="badge-count" id="videoCountBadge">0 个视频</div>
+  </header>
+
+  <!-- Currently Watching Video Pinned Section -->
+  <section class="active-video-section" id="activeVideoSection" style="display: none;">
+    <div class="active-section-header">
+      <span class="active-pulse-dot"></span>
+      <span class="active-section-title">当前屏幕正在播放 (100%匹配)</span>
+    </div>
+    <div id="activeVideoCardContainer"></div>
+  </section>
+
+  <!-- Toolbar -->
+  <div class="toolbar" id="toolbar" style="display: none;">
+    <button class="tool-btn tool-btn-primary" id="btnDownloadAll">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      一键下载全部 (最高画质)
+    </button>
+    <button class="tool-btn tool-btn-danger" id="btnClearAll">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+      清空
+    </button>
+  </div>
+
+  <!-- Video List Container -->
+  <main class="video-list-container" id="videoListContainer">
+    <!-- Populated by JS -->
+  </main>
+
+  <!-- Empty State -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M10 8l6 4-6 4V8z"/>
+      </svg>
+    </div>
+    <p class="empty-title">当前页面暂未检测到视频</p>
+    <p class="empty-desc">请在抖音网页版 (douyin.com) 滚动或播放视频，插件将实时自动捕获 4K/2K/1080P 超清源！</p>
+    <a href="https://www.douyin.com" target="_blank" class="open-douyin-btn">打开抖音网页版</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="hotkey-tip">💡 观看视频时随时按快捷键 <kbd>D</kbd> 秒下当前画面视频</div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
